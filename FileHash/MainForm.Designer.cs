@@ -48,59 +48,59 @@
             this.messageTextBox.Location = new System.Drawing.Point(12, 12);
             this.messageTextBox.Multiline = true;
             this.messageTextBox.Name = "messageTextBox";
-            this.messageTextBox.Size = new System.Drawing.Size(750, 280);
+            this.messageTextBox.Size = new System.Drawing.Size(630, 215);
             this.messageTextBox.TabIndex = 0;
             // 
             // openButton
             // 
-            this.openButton.Location = new System.Drawing.Point(12, 298);
+            this.openButton.Location = new System.Drawing.Point(12, 233);
             this.openButton.Name = "openButton";
-            this.openButton.Size = new System.Drawing.Size(120, 35);
+            this.openButton.Size = new System.Drawing.Size(100, 30);
             this.openButton.TabIndex = 1;
             this.openButton.Text = "打开(&O)...";
             this.openButton.UseVisualStyleBackColor = true;
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(138, 298);
+            this.clearButton.Location = new System.Drawing.Point(118, 233);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(120, 35);
+            this.clearButton.Size = new System.Drawing.Size(100, 30);
             this.clearButton.TabIndex = 2;
             this.clearButton.Text = "清除(&L)";
             this.clearButton.UseVisualStyleBackColor = true;
             // 
             // copyButton
             // 
-            this.copyButton.Location = new System.Drawing.Point(264, 298);
+            this.copyButton.Location = new System.Drawing.Point(224, 233);
             this.copyButton.Name = "copyButton";
-            this.copyButton.Size = new System.Drawing.Size(120, 35);
+            this.copyButton.Size = new System.Drawing.Size(100, 30);
             this.copyButton.TabIndex = 3;
             this.copyButton.Text = "复制(&C)";
             this.copyButton.UseVisualStyleBackColor = true;
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(390, 298);
+            this.saveButton.Location = new System.Drawing.Point(330, 233);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(120, 35);
+            this.saveButton.Size = new System.Drawing.Size(100, 30);
             this.saveButton.TabIndex = 4;
             this.saveButton.Text = "保存(&S)...";
             this.saveButton.UseVisualStyleBackColor = true;
             // 
             // stopButton
             // 
-            this.stopButton.Location = new System.Drawing.Point(516, 298);
+            this.stopButton.Location = new System.Drawing.Point(436, 233);
             this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(120, 35);
+            this.stopButton.Size = new System.Drawing.Size(100, 30);
             this.stopButton.TabIndex = 5;
             this.stopButton.Text = "停止(&T)";
             this.stopButton.UseVisualStyleBackColor = true;
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(642, 298);
+            this.exitButton.Location = new System.Drawing.Point(542, 233);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(120, 35);
+            this.exitButton.Size = new System.Drawing.Size(100, 30);
             this.exitButton.TabIndex = 6;
             this.exitButton.Text = "退出(&X)";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             // totalLabel
             // 
             this.totalLabel.AutoSize = true;
-            this.totalLabel.Location = new System.Drawing.Point(12, 372);
+            this.totalLabel.Location = new System.Drawing.Point(12, 302);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(52, 15);
             this.totalLabel.TabIndex = 7;
@@ -117,7 +117,7 @@
             // currentLabel
             // 
             this.currentLabel.AutoSize = true;
-            this.currentLabel.Location = new System.Drawing.Point(12, 343);
+            this.currentLabel.Location = new System.Drawing.Point(12, 273);
             this.currentLabel.Name = "currentLabel";
             this.currentLabel.Size = new System.Drawing.Size(52, 15);
             this.currentLabel.TabIndex = 8;
@@ -125,23 +125,23 @@
             // 
             // currentProgressBar
             // 
-            this.currentProgressBar.Location = new System.Drawing.Point(70, 339);
+            this.currentProgressBar.Location = new System.Drawing.Point(70, 269);
             this.currentProgressBar.Name = "currentProgressBar";
-            this.currentProgressBar.Size = new System.Drawing.Size(692, 23);
+            this.currentProgressBar.Size = new System.Drawing.Size(572, 23);
             this.currentProgressBar.TabIndex = 9;
             // 
             // totalProgressBar
             // 
-            this.totalProgressBar.Location = new System.Drawing.Point(70, 368);
+            this.totalProgressBar.Location = new System.Drawing.Point(70, 298);
             this.totalProgressBar.Name = "totalProgressBar";
-            this.totalProgressBar.Size = new System.Drawing.Size(692, 23);
+            this.totalProgressBar.Size = new System.Drawing.Size(572, 23);
             this.totalProgressBar.TabIndex = 10;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 403);
+            this.ClientSize = new System.Drawing.Size(654, 333);
             this.Controls.Add(this.totalProgressBar);
             this.Controls.Add(this.currentProgressBar);
             this.Controls.Add(this.currentLabel);
