@@ -1,0 +1,180 @@
+﻿namespace FileHash
+{
+    partial class MainForm
+    {
+        /// <summary>
+        /// 必需的设计器变量。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 清理所有正在使用的资源。
+        /// </summary>
+        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows 窗体设计器生成的代码
+
+        /// <summary>
+        /// 设计器支持所需的方法 - 不要修改
+        /// 使用代码编辑器修改此方法的内容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.messageTextBox = new System.Windows.Forms.TextBox();
+            this.openButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.copyButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.stopButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.totalLabel = new System.Windows.Forms.Label();
+            this.currentLabel = new System.Windows.Forms.Label();
+            this.currentProgressBar = new System.Windows.Forms.ProgressBar();
+            this.totalProgressBar = new System.Windows.Forms.ProgressBar();
+            this.SuspendLayout();
+            // 
+            // messageTextBox
+            // 
+            this.messageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.messageTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.messageTextBox.Location = new System.Drawing.Point(12, 12);
+            this.messageTextBox.Multiline = true;
+            this.messageTextBox.Name = "messageTextBox";
+            this.messageTextBox.Size = new System.Drawing.Size(750, 280);
+            this.messageTextBox.TabIndex = 0;
+            // 
+            // openButton
+            // 
+            this.openButton.Location = new System.Drawing.Point(12, 298);
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(120, 35);
+            this.openButton.TabIndex = 1;
+            this.openButton.Text = "打开(&O)...";
+            this.openButton.UseVisualStyleBackColor = true;
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(138, 298);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(120, 35);
+            this.clearButton.TabIndex = 2;
+            this.clearButton.Text = "清除(&L)";
+            this.clearButton.UseVisualStyleBackColor = true;
+            // 
+            // copyButton
+            // 
+            this.copyButton.Location = new System.Drawing.Point(264, 298);
+            this.copyButton.Name = "copyButton";
+            this.copyButton.Size = new System.Drawing.Size(120, 35);
+            this.copyButton.TabIndex = 3;
+            this.copyButton.Text = "复制(&C)";
+            this.copyButton.UseVisualStyleBackColor = true;
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(390, 298);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(120, 35);
+            this.saveButton.TabIndex = 4;
+            this.saveButton.Text = "保存(&S)...";
+            this.saveButton.UseVisualStyleBackColor = true;
+            // 
+            // stopButton
+            // 
+            this.stopButton.Location = new System.Drawing.Point(516, 298);
+            this.stopButton.Name = "stopButton";
+            this.stopButton.Size = new System.Drawing.Size(120, 35);
+            this.stopButton.TabIndex = 5;
+            this.stopButton.Text = "停止(&T)";
+            this.stopButton.UseVisualStyleBackColor = true;
+            // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(642, 298);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(120, 35);
+            this.exitButton.TabIndex = 6;
+            this.exitButton.Text = "退出(&X)";
+            this.exitButton.UseVisualStyleBackColor = true;
+            // 
+            // totalLabel
+            // 
+            this.totalLabel.AutoSize = true;
+            this.totalLabel.Location = new System.Drawing.Point(12, 372);
+            this.totalLabel.Name = "totalLabel";
+            this.totalLabel.Size = new System.Drawing.Size(52, 15);
+            this.totalLabel.TabIndex = 7;
+            this.totalLabel.Text = "总计：";
+            // 
+            // currentLabel
+            // 
+            this.currentLabel.AutoSize = true;
+            this.currentLabel.Location = new System.Drawing.Point(12, 343);
+            this.currentLabel.Name = "currentLabel";
+            this.currentLabel.Size = new System.Drawing.Size(52, 15);
+            this.currentLabel.TabIndex = 8;
+            this.currentLabel.Text = "当前：";
+            // 
+            // currentProgressBar
+            // 
+            this.currentProgressBar.Location = new System.Drawing.Point(70, 339);
+            this.currentProgressBar.Name = "currentProgressBar";
+            this.currentProgressBar.Size = new System.Drawing.Size(692, 23);
+            this.currentProgressBar.TabIndex = 9;
+            // 
+            // totalProgressBar
+            // 
+            this.totalProgressBar.Location = new System.Drawing.Point(70, 368);
+            this.totalProgressBar.Name = "totalProgressBar";
+            this.totalProgressBar.Size = new System.Drawing.Size(692, 23);
+            this.totalProgressBar.TabIndex = 10;
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(774, 403);
+            this.Controls.Add(this.totalProgressBar);
+            this.Controls.Add(this.currentProgressBar);
+            this.Controls.Add(this.currentLabel);
+            this.Controls.Add(this.totalLabel);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.stopButton);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.copyButton);
+            this.Controls.Add(this.clearButton);
+            this.Controls.Add(this.openButton);
+            this.Controls.Add(this.messageTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "MainForm";
+            this.Text = "文件校验";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox messageTextBox;
+        private System.Windows.Forms.Button openButton;
+        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Button copyButton;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button stopButton;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label totalLabel;
+        private System.Windows.Forms.Label currentLabel;
+        private System.Windows.Forms.ProgressBar currentProgressBar;
+        private System.Windows.Forms.ProgressBar totalProgressBar;
+    }
+}
+
