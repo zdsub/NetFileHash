@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,12 @@ namespace FileHash
     /// </summary>
     internal class FileHash
     {
+        /// <summary>
+        /// MD5校验对象
+        /// </summary>
+        private readonly MD5CryptoServiceProvider _md5 = new MD5CryptoServiceProvider();
+
+
         /// <summary>
         /// 校验文件
         /// </summary>
@@ -34,14 +41,24 @@ namespace FileHash
                 int len = fileStream.Read(buffer, 0, buffer.Length);
                 current += len;
                 Debug.WriteLine($"current: {current} len: {len}");
-                if (current == size)
+                
+                if (current != size)
                 {
+                    _md5.TransformBlock(buffer, 0, len, null, 0);
+                }
+                else
+                {
+                    _md5.TransformFinalBlock(buffer, 0, len);
                     break;
                 }
             }
 
             fileStream.Close();
             Debug.WriteLine("file close");
+
+            string md5 = BitConverter.ToString(_md5.Hash).Replace("-", "");
+            _md5.Initialize();
+            Debug.WriteLine($"md5: {md5}");
         }
 
     }
