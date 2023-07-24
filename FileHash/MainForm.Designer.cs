@@ -59,6 +59,7 @@
             this.openButton.TabIndex = 1;
             this.openButton.Text = "打开(&O)...";
             this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.openButton_Click);
             // 
             // clearButton
             // 

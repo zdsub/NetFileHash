@@ -12,9 +12,16 @@ namespace FileHash
 {
     public partial class MainForm : Form
     {
+        private readonly FileHash fileHash = new FileHash();
+
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void openButton_Click(object sender, EventArgs e)
+        {
+            fileHash.Hash("C:\\Users\\Master\\Downloads\\孤勇者 - 陈奕迅.flac");
         }
     }
 }
