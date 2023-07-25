@@ -40,16 +40,28 @@ namespace FileHash
         private readonly SHA512CryptoServiceProvider _sha512 = new SHA512CryptoServiceProvider();
 
         /// <summary>
+        /// 批量校验文件
+        /// </summary>
+        /// <param name="fileList">文件路径集合</param>
+        public void Hash(List<string> fileList)
+        {
+            foreach (string file in fileList)
+            {
+                Hash(file);
+            }
+        }
+
+        /// <summary>
         /// 校验文件
         /// </summary>
-        /// <param name="path">文件路径</param>
-        public void Hash(string path)
+        /// <param name="file">文件路径</param>
+        private void Hash(string file)
         {
-            FileInfo fileInfo = new FileInfo(path);
+            FileInfo fileInfo = new FileInfo(file);
             long size = fileInfo.Length;
             Debug.WriteLine($"size: {size}");
 
-            FileStream fileStream = File.OpenRead(path);
+            FileStream fileStream = File.OpenRead(file);
             Debug.WriteLine("file open");
 
             long current = 0;

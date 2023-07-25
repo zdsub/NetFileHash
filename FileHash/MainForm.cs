@@ -21,7 +21,12 @@ namespace FileHash
 
         private void openButton_Click(object sender, EventArgs e)
         {
-            fileHash.Hash("C:\\Users\\Master\\Downloads\\孤勇者 - 陈奕迅.flac");
+            List<string> fileList = new List<string>() 
+            {
+                "C:\\Users\\Master\\Downloads\\孤勇者 - 陈奕迅.flac",
+                "C:\\Users\\Master\\Downloads\\hash.exe"
+            };
+            fileHash.Hash(fileList);
         }
     }
 }
