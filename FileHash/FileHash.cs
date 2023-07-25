@@ -40,12 +40,17 @@ namespace FileHash
         private readonly SHA512CryptoServiceProvider _sha512 = new SHA512CryptoServiceProvider();
 
         /// <summary>
+        /// 待计算文件路径集合
+        /// </summary>
+        public List<string> FileList = new List<string>();
+
+        /// <summary>
         /// 批量校验文件
         /// </summary>
         /// <param name="fileList">文件路径集合</param>
-        public void Hash(List<string> fileList)
+        public void Hash()
         {
-            foreach (string file in fileList)
+            foreach (string file in FileList)
             {
                 Hash(file);
             }
