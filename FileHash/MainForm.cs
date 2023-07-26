@@ -24,20 +24,20 @@ namespace FileHash
 
         private void openButton_Click(object sender, EventArgs e)
         {
-            fileHash.FileList = new List<string>()
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                "C:\\Users\\Master\\Downloads\\孤勇者 - 陈奕迅.flac",
-                "C:\\Users\\Master\\Downloads\\hash.exe"
-            };
+                string[] files = openFileDialog.FileNames;
+                fileHash.FileList = files.ToList();
 
-            totalProgressBar.Value = 0;
-            totalProgressBar.Maximum = fileHash.FileList.Count;
-            currentProgressBar.Value = 0;
+                totalProgressBar.Value = 0;
+                totalProgressBar.Maximum = fileHash.FileList.Count;
+                currentProgressBar.Value = 0;
 
-            hashThread = new Thread(fileHash.Hash);
-            hashThread.Start();
+                hashThread = new Thread(fileHash.Hash);
+                hashThread.Start();
 
-            hashTimer.Enabled = true;
+                hashTimer.Enabled = true;
+            }
         }
 
         private void hashTimer_Tick(object sender, EventArgs e)
@@ -45,6 +45,8 @@ namespace FileHash
             currentProgressBar.Value = fileHash.Progress;
             totalProgressBar.Value = fileHash.Index;
             messageTextBox.Text = fileHash.Result;
+            messageTextBox.SelectionStart = messageTextBox.Text.Length;
+            messageTextBox.ScrollToCaret();
 
             Debug.WriteLine($"progress: {fileHash.Progress}");
             Debug.WriteLine($"index: {fileHash.Index}");

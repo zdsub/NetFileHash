@@ -41,6 +41,7 @@
             this.currentProgressBar = new System.Windows.Forms.ProgressBar();
             this.totalProgressBar = new System.Windows.Forms.ProgressBar();
             this.hashTimer = new System.Windows.Forms.Timer(this.components);
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // messageTextBox
@@ -146,6 +147,11 @@
             this.hashTimer.Interval = 15;
             this.hashTimer.Tick += new System.EventHandler(this.hashTimer_Tick);
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "所有文件 (*.*)|*.*";
+            this.openFileDialog.Multiselect = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -185,6 +191,7 @@
         private System.Windows.Forms.ProgressBar currentProgressBar;
         private System.Windows.Forms.ProgressBar totalProgressBar;
         private System.Windows.Forms.Timer hashTimer;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 
