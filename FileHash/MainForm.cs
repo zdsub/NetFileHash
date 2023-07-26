@@ -27,16 +27,7 @@ namespace FileHash
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string[] files = openFileDialog.FileNames;
-                fileHash.FileList = files.ToList();
-
-                totalProgressBar.Value = 0;
-                totalProgressBar.Maximum = fileHash.FileList.Count;
-                currentProgressBar.Value = 0;
-
-                hashThread = new Thread(fileHash.Hash);
-                hashThread.Start();
-
-                hashTimer.Enabled = true;
+                StartHash(files);
             }
         }
 
@@ -56,6 +47,38 @@ namespace FileHash
             {
                 hashTimer.Enabled = false;
             }
+        }
+
+        private void MainForm_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.All;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void MainForm_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[]) e.Data.GetData(DataFormats.FileDrop);
+            StartHash(files);
+        }
+
+        /// <summary>
+        /// 开始校验文件
+        /// </summary>
+        /// <param name="files">待校验文件路径数组</param>
+        private void StartHash(string[] files)
+        {
+            totalProgressBar.Value = 0;
+            totalProgressBar.Maximum = files.Length;
+            currentProgressBar.Value = 0;
+
+            fileHash.FileList = files.ToList();
+
+            hashThread = new Thread(fileHash.Hash);
+            hashThread.Start();
+
+            hashTimer.Enabled = true;
         }
     }
 }
