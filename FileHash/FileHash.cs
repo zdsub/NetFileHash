@@ -45,11 +45,28 @@ namespace FileHash
         public List<string> FileList = new List<string>();
 
         /// <summary>
+        /// 校验结果
+        /// </summary>
+        public string Result { get; private set; }
+
+        /// <summary>
+        /// 总校验进度
+        /// </summary>
+        public int Index { get; private set; }
+
+        /// <summary>
+        /// 当前校验进度
+        /// </summary>
+        public int Progress { get; set; }
+
+        /// <summary>
         /// 批量校验文件
         /// </summary>
         /// <param name="fileList">文件路径集合</param>
         public void Hash()
         {
+            Index = 0;
+
             foreach (string file in FileList)
             {
                 Hash(file);
@@ -64,10 +81,8 @@ namespace FileHash
         {
             FileInfo fileInfo = new FileInfo(file);
             long size = fileInfo.Length;
-            Debug.WriteLine($"size: {size}");
 
             FileStream fileStream = File.OpenRead(file);
-            Debug.WriteLine("file open");
 
             long current = 0;
             byte[] buffer = new byte[4096];
@@ -76,7 +91,7 @@ namespace FileHash
             {
                 int len = fileStream.Read(buffer, 0, buffer.Length);
                 current += len;
-                Debug.WriteLine($"current: {current} len: {len}");
+                Progress = (int) ((double) current / size * 100);
                 
                 if (current != size)
                 {
@@ -98,24 +113,27 @@ namespace FileHash
             }
 
             fileStream.Close();
-            Debug.WriteLine("file close");
 
             string md5 = BitConverter.ToString(_md5.Hash).Replace("-", "");
             string sha1 = BitConverter.ToString(_sha1.Hash).Replace("-", "");
             string sha256 = BitConverter.ToString(_sha256.Hash).Replace("-", "");
             string sha384 = BitConverter.ToString(_sha384.Hash).Replace("-", "");
             string sha512 = BitConverter.ToString(_sha512.Hash).Replace("-", "");
+
+            Index++;
+            Result += $"文件: {fileInfo.FullName}\r\n" +
+                      $"大小: {size}字节\r\n" +
+                      $"MD5: {md5}\r\n" +
+                      $"SHA1: {sha1}\r\n" +
+                      $"SHA256: {sha256}\r\n" +
+                      $"SHA384: {sha384}\r\n" +
+                      $"SHA512: {sha512}\r\n\r\n";
+
             _md5.Initialize();
             _sha1.Initialize();
             _sha256.Initialize();
             _sha384.Initialize();
             _sha512.Initialize();
-            Debug.WriteLine($"md5: {md5}");
-            Debug.WriteLine($"sha1: {sha1}");
-            Debug.WriteLine($"sha256: {sha256}");
-            Debug.WriteLine($"sha384: {sha384}");
-            Debug.WriteLine($"sha512: {sha512}");
         }
-
     }
 }

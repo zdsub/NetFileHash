@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.messageTextBox = new System.Windows.Forms.TextBox();
             this.openButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             this.currentLabel = new System.Windows.Forms.Label();
             this.currentProgressBar = new System.Windows.Forms.ProgressBar();
             this.totalProgressBar = new System.Windows.Forms.ProgressBar();
+            this.hashTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // messageTextBox
@@ -48,6 +50,7 @@
             this.messageTextBox.Location = new System.Drawing.Point(12, 12);
             this.messageTextBox.Multiline = true;
             this.messageTextBox.Name = "messageTextBox";
+            this.messageTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.messageTextBox.Size = new System.Drawing.Size(630, 215);
             this.messageTextBox.TabIndex = 0;
             // 
@@ -138,6 +141,11 @@
             this.totalProgressBar.Size = new System.Drawing.Size(572, 23);
             this.totalProgressBar.TabIndex = 10;
             // 
+            // hashTimer
+            // 
+            this.hashTimer.Interval = 15;
+            this.hashTimer.Tick += new System.EventHandler(this.hashTimer_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -176,6 +184,7 @@
         private System.Windows.Forms.Label currentLabel;
         private System.Windows.Forms.ProgressBar currentProgressBar;
         private System.Windows.Forms.ProgressBar totalProgressBar;
+        private System.Windows.Forms.Timer hashTimer;
     }
 }
 
