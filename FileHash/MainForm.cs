@@ -67,6 +67,11 @@ namespace FileHash
             fileHash.IsStop = true;
         }
 
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void hashTimer_Tick(object sender, EventArgs e)
         {
             currentProgressBar.Value = fileHash.Progress;

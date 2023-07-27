@@ -118,6 +118,7 @@
             this.exitButton.TabIndex = 6;
             this.exitButton.Text = "退出(&X)";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // totalLabel
             // 
