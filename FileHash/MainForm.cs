@@ -88,7 +88,7 @@ namespace FileHash
         /// 开始校验文件
         /// </summary>
         /// <param name="files">待校验文件路径数组</param>
-        private void StartHash(string[] files)
+        public void StartHash(string[] files)
         {
             totalProgressBar.Value = 0;
             totalProgressBar.Maximum = files.Length;
