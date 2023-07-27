@@ -78,7 +78,6 @@ namespace FileHash
             currentProgressBar.PerformStep();
 
             totalProgressBar.Value = fileHash.Index;
-            totalProgressBar.PerformStep();
 
             messageTextBox.Text = fileHash.Result;
             messageTextBox.SelectionStart = messageTextBox.Text.Length;
