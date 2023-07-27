@@ -70,7 +70,9 @@ namespace FileHash
         /// <param name="fileList">文件路径集合</param>
         public void Hash()
         {
+            IsStop = false;
             Index = 0;
+            Progress = 0;
 
             foreach (string file in FileList)
             {
