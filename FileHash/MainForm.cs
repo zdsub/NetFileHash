@@ -157,5 +157,14 @@ namespace FileHash
 
             hashTimer.Enabled = true;
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (hashThread != null && hashThread.IsAlive)
+            {
+                fileHash.IsStop = true;
+                hashThread.Join();
+            }
+        }
     }
 }
