@@ -83,6 +83,7 @@
             this.copyButton.TabIndex = 3;
             this.copyButton.Text = "复制(&C)";
             this.copyButton.UseVisualStyleBackColor = true;
+            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
             // 
             // saveButton
             // 

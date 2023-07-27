@@ -36,6 +36,11 @@ namespace FileHash
             messageTextBox.Clear();
         }
 
+        private void copyButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(messageTextBox.Text);
+        }
+
         private void stopButton_Click(object sender, EventArgs e)
         {
             stopButton.Enabled = false;
