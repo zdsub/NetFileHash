@@ -31,6 +31,11 @@ namespace FileHash
             }
         }
 
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            messageTextBox.Clear();
+        }
+
         private void stopButton_Click(object sender, EventArgs e)
         {
             stopButton.Enabled = false;

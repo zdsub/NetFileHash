@@ -73,6 +73,7 @@
             this.clearButton.TabIndex = 2;
             this.clearButton.Text = "清除(&L)";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // copyButton
             // 
