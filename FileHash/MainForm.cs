@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -51,10 +52,30 @@ namespace FileHash
 
         private void MainForm_DragEnter(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-                e.Effect = DragDropEffects.All;
-            else
-                e.Effect = DragDropEffects.None;
+            string[] files = e.Data.GetData(DataFormats.FileDrop) as string[];
+            
+            if (files!= null)
+            {
+                int i = 0;
+
+                while (i < files.Length)
+                {
+                    FileInfo fileInfo = new FileInfo(files[i]);
+
+                    if (!fileInfo.Attributes.HasFlag(FileAttributes.Archive))
+                        break;
+
+                    i++;
+                }
+
+                if (i == files.Length)
+                {
+                    e.Effect = DragDropEffects.All;
+                    return;
+                }
+            }
+            
+            e.Effect = DragDropEffects.None;
         }
 
         private void MainForm_DragDrop(object sender, DragEventArgs e)
