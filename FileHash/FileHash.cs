@@ -80,11 +80,22 @@ namespace FileHash
         private void Hash(string file)
         {
             FileInfo fileInfo = new FileInfo(file);
-            long size = fileInfo.Length;
+
+             if (!fileInfo.Attributes.HasFlag(FileAttributes.Archive))
+            {
+                AddErrorResult(file, "不是文件");
+                return;
+            }
+            else if(!fileInfo.Exists)
+            {
+                AddErrorResult(file, "文件不存在");
+                return;
+            }
 
             FileStream fileStream = File.OpenRead(file);
 
             long current = 0;
+            long size = fileInfo.Length;
             byte[] buffer = new byte[4096];
 
             while (true)
@@ -134,6 +145,19 @@ namespace FileHash
             _sha256.Initialize();
             _sha384.Initialize();
             _sha512.Initialize();
+        }
+
+        /// <summary>
+        /// 添加错误信息
+        /// </summary>
+        /// <param name="file">文件路径</param>
+        /// <param name="error">错误信息</param>
+        private void AddErrorResult(string file, string error)
+        {
+            Result += $"文件: {file}\r\n" +
+                      $"{error}\r\n\r\n";
+            Progress = 100;
+            Index++;
         }
     }
 }
