@@ -41,6 +41,21 @@ namespace FileHash
             Clipboard.SetText(messageTextBox.Text);
         }
 
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    File.WriteAllText(saveFileDialog.FileName, messageTextBox.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("导出失败", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void stopButton_Click(object sender, EventArgs e)
         {
             stopButton.Enabled = false;

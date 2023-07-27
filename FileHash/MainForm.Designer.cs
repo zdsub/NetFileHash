@@ -42,6 +42,7 @@
             this.totalProgressBar = new System.Windows.Forms.ProgressBar();
             this.hashTimer = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // messageTextBox
@@ -93,6 +94,7 @@
             this.saveButton.TabIndex = 4;
             this.saveButton.Text = "保存(&S)...";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // stopButton
             // 
@@ -156,6 +158,11 @@
             this.openFileDialog.Filter = "所有文件 (*.*)|*.*";
             this.openFileDialog.Multiselect = true;
             // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.FileName = "hash.txt";
+            this.saveFileDialog.Filter = "文本文件 (*.txt)|*.txt|所有文件 (*.*)|*.*";
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -199,6 +206,7 @@
         private System.Windows.Forms.ProgressBar totalProgressBar;
         private System.Windows.Forms.Timer hashTimer;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 
