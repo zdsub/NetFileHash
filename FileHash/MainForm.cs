@@ -75,8 +75,6 @@ namespace FileHash
         private void hashTimer_Tick(object sender, EventArgs e)
         {
             currentProgressBar.Value = fileHash.Progress;
-            currentProgressBar.PerformStep();
-
             totalProgressBar.Value = fileHash.Index;
 
             messageTextBox.Text = fileHash.Result;
