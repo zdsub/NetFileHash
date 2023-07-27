@@ -100,6 +100,7 @@
             this.stopButton.TabIndex = 5;
             this.stopButton.Text = "停止(&T)";
             this.stopButton.UseVisualStyleBackColor = true;
+            this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
             // 
             // exitButton
             // 
