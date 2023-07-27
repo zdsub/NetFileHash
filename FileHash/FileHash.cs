@@ -105,12 +105,11 @@ namespace FileHash
             long size = fileInfo.Length;
             byte[] buffer = new byte[4096];
 
-            while (current != size && !IsStop)
+            while (!IsStop)
             {
                 int len = fileStream.Read(buffer, 0, buffer.Length);
                 current += len;
-                Progress = (int) ((double) current / size * 100);
-                
+
                 if (current != size)
                 {
                     _md5.TransformBlock(buffer, 0, len, null, 0);
@@ -118,6 +117,8 @@ namespace FileHash
                     _sha256.TransformBlock(buffer, 0, len, null, 0);
                     _sha384.TransformBlock(buffer, 0, len, null, 0);
                     _sha512.TransformBlock(buffer, 0, len, null, 0);
+
+                    Progress = (int)((double)current / size * 100);
                 }
                 else
                 {
@@ -126,6 +127,10 @@ namespace FileHash
                     _sha256.TransformFinalBlock(buffer, 0, len);
                     _sha384.TransformFinalBlock(buffer, 0, len);
                     _sha512.TransformFinalBlock(buffer, 0, len);
+
+                    Progress = 100;
+
+                    break;
                 }
             }
 
