@@ -34,6 +34,10 @@ namespace FileHash
         private void clearButton_Click(object sender, EventArgs e)
         {
             messageTextBox.Clear();
+
+            clearButton.Enabled = false;
+            copyButton.Enabled = false;
+            saveButton.Enabled = false;
         }
 
         private void copyButton_Click(object sender, EventArgs e)
@@ -74,6 +78,13 @@ namespace FileHash
             messageTextBox.Text = fileHash.Result;
             messageTextBox.SelectionStart = messageTextBox.Text.Length;
             messageTextBox.ScrollToCaret();
+
+            if (messageTextBox.Text != "")
+            {
+                clearButton.Enabled = true;
+                copyButton.Enabled = true;
+                saveButton.Enabled = true;
+            }
 
             if (!hashThread.IsAlive)
             {

@@ -68,6 +68,7 @@
             // 
             // clearButton
             // 
+            this.clearButton.Enabled = false;
             this.clearButton.Location = new System.Drawing.Point(118, 233);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(100, 30);
@@ -78,6 +79,7 @@
             // 
             // copyButton
             // 
+            this.copyButton.Enabled = false;
             this.copyButton.Location = new System.Drawing.Point(224, 233);
             this.copyButton.Name = "copyButton";
             this.copyButton.Size = new System.Drawing.Size(100, 30);
@@ -88,6 +90,7 @@
             // 
             // saveButton
             // 
+            this.saveButton.Enabled = false;
             this.saveButton.Location = new System.Drawing.Point(330, 233);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 30);
