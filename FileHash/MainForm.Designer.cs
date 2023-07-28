@@ -47,11 +47,13 @@
             // 
             // messageTextBox
             // 
+            this.messageTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.messageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.messageTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.messageTextBox.Location = new System.Drawing.Point(12, 12);
             this.messageTextBox.Multiline = true;
             this.messageTextBox.Name = "messageTextBox";
+            this.messageTextBox.ReadOnly = true;
             this.messageTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.messageTextBox.Size = new System.Drawing.Size(630, 215);
             this.messageTextBox.TabIndex = 0;
